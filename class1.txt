@@ -1,0 +1,7 @@
+Starting today we are going to make some GUI-based python games using the pygame package.
+
+1) Install Pygame
+On Windows this should be fairly easy.
+
+2) Basics of GUI Programming Concepts
+
