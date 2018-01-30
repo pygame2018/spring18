@@ -8,11 +8,13 @@ the GUI games, using the pygame module.
 The course is be based on the following free books:
 
 1. Invent Your Own Computer Games with Python, 4th Edition
+
 http://inventwithpython.com/invent4thed/
 
 Chapters 17-21
 
 2. Make Games with Python & Pygame
+
 http://inventwithpython.com/pygame/
 
 
