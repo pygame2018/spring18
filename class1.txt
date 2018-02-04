@@ -1,4 +1,4 @@
-Outline
+Outline  (https://github.com/pygame2018/sprint18/)
 -------
 1. Install Pygame
 2. Basics of GUI Programming Concepts
@@ -14,7 +14,7 @@ http://inventwithpython.com/pygame/chapter2.html
 
 1. Install Pygame
 -----------------
-Following instructions on Chapter 1 of 'Making Games with Python & Pygmae'.
+Following instructions on Chapter 1 of 'Making Games with Python & Pygame'.
 Or, follow http://pygame.org/wiki/GettingStarted
 
 Basically, if you already have python or python3 recently installed, you
@@ -53,7 +53,6 @@ Surface (display) - think them as a canvas
 ------------------------
 This is a demo program to show the various things to be drawn:
 https://github.com/pygame2018/spring18/blob/master/pygameHelloWorld.py
-
 This include: (More on http://pygame.org/docs)
 - background fill
 - text
