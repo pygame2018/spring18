@@ -1,10 +1,69 @@
-Starting today we are going to make some GUI-based python games using the pygame package.
+Outline
+-------
+1. Install Pygame
+2. Basics of GUI Programming Concepts
+   - The Event loop
+   - Game state
+3. Drawing and Animation
 
-1) Install Pygame
-On Windows this should be fairly easy.
-On Linux, usually done via package installers.
-On Mac, unfortunately only python2 is available.
+Starting today we are going to make some GUI-based python games using
+the pygame package.
 
+Text to read: Chapter 2 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter2.html
+
+1. Install Pygame
+-----------------
+Following instructions on Chapter 1 of 'Making Games with Python & Pygmae'.
+Or, follow http://pygame.org/wiki/GettingStarted
+
+Basically, if you already have python or python3 recently installed, you
+can use the built-in 'pip' installer. Just do:
+python3 -m pip install pygame --user
+(use python if you don't have python3).
+
+To see if it works, run one of the includes examples:
+python3 -m pygame.examples.aliens
 
 2) Basics of GUI Programming Concepts
+------------------------------------- 
+Unlike the terminal-based command line interface (CLI). Graphical User
+Interface is based on events (like keyboard/mouse actions) passed into
+the program by the system and processed by the program.
 
+So, you (the user) produces events; the events are forwarded to the
+applications; the application basically just loops forever waiting for
+the events - and when the events do come, repaint the window accordingly.
+
+Usually the application keeps a 'conceptual' drawing of the things to
+be drawn - this is called the 'state'. The actually drawing is thus
+just derived from the the conceptual state by incorporating the user
+inputs (information passed by the events).
+
+Other concepts:
+FPS: Frames per second
+Color - as tuples (R, G, B) or (R, G, B, T)
+Coordinate system - (x, y) and dimensions (width, height)
+- top, left, bottom, right, centerx, centery
+Surface (display) - think them as a canvas
+- you can draw shapes on a canvas, using Constructors
+- texts are a little difficult - think the
+
+3) Drawing and Animation
+------------------------
+This is a demo program to show the various things to be drawn:
+https://github.com/pygame2018/spring18/blob/master/pygameHelloWorld.py
+
+This include: (More on http://pygame.org/docs)
+- background fill
+- text
+- shapes like polygon, line, circle, ellipse, rect
+- and a black pixel (can you find it?)
+
+The drawing:
+The source is: https://inventwithpython.com/drawing.py
+
+The animation: (need download cat.png here: http://invpy.com/cat.png)
+The source is: http://invpy.com/catanimation.py
+
+More files in https://github.com/pygame2018/spring18/
