@@ -1,4 +1,4 @@
-Outline  (https://github.com/pygame2018/sprint18/)
+Outline  (https://github.com/pygame2018/spring18/)
 -------
 1. Install Pygame
 2. Basics of GUI Programming Concepts
