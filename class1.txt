@@ -47,7 +47,7 @@ Coordinate system - (x, y) and dimensions (width, height)
 - top, left, bottom, right, centerx, centery
 Surface (display) - think them as a canvas
 - you can draw shapes on a canvas, using Constructors
-- texts are a little difficult - think the
+- texts are a little difficult
 
 3) Drawing and Animation
 ------------------------
