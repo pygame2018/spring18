@@ -65,4 +65,4 @@ The source is: https://inventwithpython.com/drawing.py
 The animation: (need download cat.png here: http://invpy.com/cat.png)
 The source is: http://invpy.com/catanimation.py
 
-More files in https://github.com/pygame2018/spring18/
+Extra: drawing fractals! Pictures in https://github.com/pygame2018/spring18/class1_files
