@@ -5,8 +5,10 @@ simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
 Class 2: The memory puzzle! Notes: see class2.txt above. Code: memorypuzzle.py (download at https://inventwithpython.com/memorypuzzle.py)
+Reading: http://inventwithpython.com/pygame/chapter3.html
 
 Class 1: Basics of GUI and drawings. Notes: see class1.txt above. Code: drawing.py (at https://inventwithpython.com/drawing.py)
+Reading: http://inventwithpython.com/pygame/chapter2.html
 
 The course is be based on the following free books:
 

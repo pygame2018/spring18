@@ -7,7 +7,7 @@ Outline  (https://github.com/pygame2018/spring18/)
 3. Can you fix it?
 
 Text to read: Chapter 3 of 'Making Games with Python & Pygame'
-http://inventwithpython.com/pygame/chapter2.html
+http://inventwithpython.com/pygame/chapter3.html
 
 1. What is Animation
 --------------------
