@@ -1,0 +1,94 @@
+========= memorypuzzle1.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: Graphics are messed up.
+< 
+< 
+187c182
+<     quarter = int(BOXSIZE) # syntactic sugar
+---
+>     quarter = int(BOXSIZE * 0.25) # syntactic sugar
+========= memorypuzzle2.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: IndexError: list index out of range
+< 
+< 
+87c82
+<         boxx, boxy = mousex, mousey
+---
+>         boxx, boxy = getBoxAtPixel(mousex, mousey)
+========= memorypuzzle3.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: Box highlight lags
+< 
+< 
+125a121
+>         pygame.display.update()
+========= memorypuzzle4.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: Icons don't show up
+< 
+< 
+210c205
+<     return board[boxx][boxy][1], board[boxx][boxy][0]
+---
+>     return board[boxx][boxy][0], board[boxx][boxy][1]
+========= memorypuzzle5.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: NameError: global name 'getRandomizedBoard' is not defined
+< 
+< 
+137c132
+< def getRandomizeBoard():
+---
+> def getRandomizedBoard():
+========= memorypuzzle6.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: Box hide/reveal animation is very choppy.
+< 
+< 
+223,224c218,219
+<         pygame.display.update()
+<         FPSCLOCK.tick(FPS)
+---
+>     pygame.display.update()
+>     FPSCLOCK.tick(FPS)
+========= memorypuzzle7.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: No gaps are showing up on the board.
+< 
+< 
+171,172c166,167
+<     left = boxx * BOXSIZE + GAPSIZE + XMARGIN
+<     top = boxy * BOXSIZE + GAPSIZE + YMARGIN
+---
+>     left = boxx * (BOXSIZE + GAPSIZE) + XMARGIN
+>     top = boxy * (BOXSIZE + GAPSIZE) + YMARGIN
+========= memorypuzzle8.py - memorypuzzle.py ========
+1,5d0
+< # This version of the game has a bug in it. See if you can figure out how to fix it.
+< # http://inventwithpython.com/pygame/buggy
+< # Bug Description: TypeError: 'NoneType' object is not iterable
+< 
+< 
+165a161
+>     return result
+170,171c166,167
+<     left = boxx * BOXSIZE + GAPSIZE + XMARGIN
+<     top = boxy * BOXSIZE + GAPSIZE + YMARGIN
+---
+>     left = boxx * (BOXSIZE + GAPSIZE) + XMARGIN
+>     top = boxy * (BOXSIZE + GAPSIZE) + YMARGIN
