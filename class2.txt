@@ -1,0 +1,68 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. What is Animation
+2. The Memory Puzzle
+   - Programming trick: nested loops
+   - How to capture/translate mouse movements/clicks
+3. Can you fix it?
+
+Text to read: Chapter 3 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter2.html
+
+1. What is Animation
+--------------------
+Draw a sequence of (slightly) different pictures over time.
+Frames per second (FPS)
+
+2. The Memory Puzzle
+--------------------
+At https://github.com/pygame2018/spring18/class2_files/memorypuzzle.py
+Load the file into IDLE and run it. Or just type python memorypuzzle.py
+at command line.
+
+This is a simple game to illustrate the following point:
+- Data structures:
+    A list of icons board[box_x][box_y] (contains shape/color pairs),
+    revealed[box_x][box_y]
+- Basic game flow:
+    setup the board -> wait for events -> handle events (reveal or not)
+    -> redraw the board -> check win/lose -> wait again
+- The board is often a grid, so use a nested loop to
+  draw all the elements
+  Note the difference between these two:
+
+# column by column             |  # row by row
+for x in [0, 1, 2, 3, 4]:      |  for y in ['a', 'b', 'c']:     
+    for y in ['a', 'b', 'c']:  |      for x in [0, 1, 2, 3, 4]: 
+        print(x, y)            |          print(x, y)           
+
+- Mouse events: type and position (x,y) 
+   MOUSEMOTION
+   MOUSEBUTTONUP (or MOUSEBUTTONDOWN. What's the difference?)
+   The position is relative to the top-left corner of the window,
+   so you will need to figure out which box the mouse clicked,
+   - see the function getBoxAtPixel(mousex, mousey)
+
+3. Can you fix it?
+------------------
+Here are some "buggy" versions of the program. The difference is often
+caused by just one line! Download and run the buggy program, and try
+to fix it!
+
+You can start with the error messages, which give you important clues
+(but not always).
+
+Filename               - Symptom
+--------                 -------
+memorypuzzle_buggy1.py - Graphics are messed up.
+memorypuzzle_buggy2.py - IndexError: list index out of range
+memorypuzzle_buggy3.py - Box highlight lags
+memorypuzzle_buggy4.py - icons don't show up
+memorypuzzle_buggy5.py - NameError: global name 'getRandomizedBoard' is not defined
+memorypuzzle_buggy6.py - Box hide/reveal animation is very choppy.
+memorypuzzle_buggy7.py - No gaps are showing up on the board.
+memorypuzzle_buggy8.py - TypeError: 'NoneType' object is not iterable
+
+The files are located at:
+
+https://github.com/pygame2018/spring18/class2_files
