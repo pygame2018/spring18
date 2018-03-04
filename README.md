@@ -4,6 +4,9 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+Class 3: The memory puzzle continued. Files in class3\_files (https://github.com/pygame2018/spring18/tree/master/class3\_files)
+https://github.com/pygame2018/spring18/raw/master/memorycheat3.py
+
 Class 2: The memory puzzle! Notes: see class2.txt above. Code: memorypuzzle.py (download at https://inventwithpython.com/memorypuzzle.py)
 Reading: http://inventwithpython.com/pygame/chapter3.html
 
