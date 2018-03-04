@@ -1,0 +1,40 @@
+--- memorypuzzle.py	2018-03-04 09:16:50.545284497 -0500
++++ memorycheat1.py	2018-03-04 09:18:48.945676431 -0500
+@@ -48,6 +48,10 @@
+ def main():
+     global FPSCLOCK, DISPLAYSURF
+     pygame.init()
++    useCheat = False
++    cheatCode = 'CHEATS ON! '
++    fontObj = pygame.font.Font('freesansbold.ttf', 16)
++
+     FPSCLOCK = pygame.time.Clock()
+     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+ 
+@@ -78,6 +82,12 @@
+             elif event.type == MOUSEBUTTONUP:
+                 mousex, mousey = event.pos
+                 mouseClicked = True
++            elif event.type == KEYDOWN:
++                if (event.key == K_RETURN):
++                    if (useCheat):
++                        useCheat = False
++                    else:
++                        useCheat = True
+ 
+         boxx, boxy = getBoxAtPixel(mousex, mousey)
+         if boxx != None and boxy != None:
+@@ -118,6 +128,13 @@
+                     firstSelection = None # reset firstSelection variable
+ 
+         # Redraw the screen and wait a clock tick.
++
++        if (useCheat):
++            textSurfaceObj = fontObj.render(cheatCode, True, GREEN, BLUE)
++            textRectObj = textSurfaceObj.get_rect()
++            textRectObj.center = (320, 20)
++            DISPLAYSURF.blit(textSurfaceObj, textRectObj)
++
+         pygame.display.update()
+         FPSCLOCK.tick(FPS)
+ 

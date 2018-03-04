@@ -1,0 +1,53 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Memory Puzzle continued
+   - How to make it easier to play
+   - Keyboard events
+
+Text to read: Chapter 3 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter3.html
+
+1. The Memory Puzzle continued
+------------------------------
+We start with the same program we played last time:
+https://github.com/pygame2018/spring18/class2_files/memorypuzzle.py
+
+As you see, the game itself is a bit hard to play. Sometimes a game
+has 'hidden' features, or cheats, to make things easier. Game developers
+may also use these hidden things to help themselves to test the game.
+
+For the memory puzzle, we can use some keyboard events as secret keys.
+
+The first thing is to use the ENTER key as a secret key, and print
+a line on the screen to indicate that the 'cheat' is on.
+
+The modified program is memorycheat.py. I all included the 'diff' (i.e.
+the differences) between this program and the original one. The diff
+file has a special format, but it is really kind of self-explanatory
+after a quick introduction: basically the @@-lines telling you the location
+of the differece, and  lines begin with + (or -) shows the added (or deleted)
+lines. The rest are just the "context", i.e. lines surrounding the change.
+
+Type in the added code (without the + in the beginning) and run the
+new program! All it does is: add a new variable 'useCheat' to toggle
+the cheat mode, and a 'cheatCode' string to be put on the screen. There
+is no actually cheat action, yet.
+
+Next, program the UP key to choose a cheat action: just reuse the
+start animation. The diff is also included. Note that we need to
+turn off the cheat mode by setting useCheat to False. What would happen
+if we don't do this? Try it out!
+
+The next step is about programming the DOWN key to reveal just one
+box. (The diff is also included.)  This is also not hard: just go
+through all boxes and find out if any box has the same color and shape
+at the selected box (e.g. the 'match'), and quickly reveal it. Notice
+the conditions needed to find the match - why?
+
+If you have some time left, think about adding a new cheat action,
+for example, use the LEFT key to instantly won the game. This is
+actually pretty easy. Check the 'hasWon()' function and you will
+get the idea. (Hint: you only need to change the game state, i.e.
+the data structures...)
+
+All files are in: https://github.com/pygame2018/spring18/class3_files
