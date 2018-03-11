@@ -1,0 +1,20 @@
+--- slidepuzzle.py	2018-03-11 10:53:37.405675519 -0400
++++ slidepuzzle_buggy4.py	2018-03-11 10:53:04.573565145 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Clicking Solve twice causes it to make several extra moves the second time.
++
++
+ # Slide Puzzle
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -81,7 +86,7 @@
+                         allMoves = []
+                     elif SOLVE_RECT.collidepoint(event.pos):
+                         resetAnimation(mainBoard, solutionSeq + allMoves) # clicked on Solve button
+-                        allMoves = []
++                        alllMoves = []
+                 else:
+                     # check if the clicked tile was next to the blank spot
+ 

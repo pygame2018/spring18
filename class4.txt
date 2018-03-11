@@ -1,0 +1,64 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Sliding Game!
+- Similarities between this game and the Memory puzzle
+
+2. Is there some A. I. ?
+- The 'Solve' button
+
+3. Fix Some Bugs!
+
+Text to read: Chapter 4 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter4.html
+
+1. The Sliding Game
+-------------------
+The source code for the sliding puzzle game:
+
+https://inventwithpython.com/slidepuzzle.py
+
+This games was once a very popular game, just like Rubik's cude or 
+the soduko puzzle. It's simple to play yet very intriguing, and also
+addictive!
+
+The game design part is actually pretty simple. Like the memory game,
+you have a 'tile' interface and any action just cause the board to be
+redrawn. And the redraw part is rather simple: just figure out the
+location of the empty square and the selected square, and swap their
+positions if they are adjacent to each other! In addition, the
+keyboard arrow keys can also be used (we talked about this during last
+class). Again, it is just a matter of finding which square to move in
+response to a arrow key.
+
+Actually, since any movement of a square involves replacing the empty
+square, you could make things a lot easier to design if you imagine
+that you are actually moving the empty square!
+
+The program layout, as well as the game flow, is very similar to the
+memory puzzle: waiting for events -> compute the action -> redraw
+-> check winning condition -> back to waiting. This is really the 'pattern'
+for typical GUI (graphical user interfaced) games.
+
+2. Is There Some A.I.?
+----------------------
+What about the extra buttons? 
+'New Game': just randomly does some moves from the 'solved' board.
+'Reset': goes back to the begining of the current puzzle.
+'Solve': show an animation that solves the puzzle for you.
+
+You may wonder how did the program solve the generated puzzle? Well,
+it doesn't! The trick is to simply store all the random moved that generated
+the puzzle and play the moves backward like revering a video. Ha!
+The program also records each and every moves you did, and can play the
+moves backward, so it can solve the game no matter what you did. Similarly,
+'Reset' just reverse your moves.
+
+But this tells us about an important technique: you can maintain some extra
+data structures (like the movement history) in the game. These information
+does not affect how the UI (the board) is drawn on the screen, but they
+can be enormously useful for the computation involved in game play.
+
+3. As usual, there are some buggy programs (in class4_files) for you to fix!
+The solutions are in 'diff' files, so if you really need a hint, check them out!
+
+All files are in: https://github.com/pygame2018/spring18/class4_files

@@ -1,0 +1,20 @@
+--- slidepuzzle.py	2018-03-11 10:53:37.405675519 -0400
++++ slidepuzzle_buggy6.py	2018-03-11 10:53:04.573565145 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: SyntaxError: invalid syntax
++
++
+ # Slide Puzzle
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -162,7 +167,7 @@
+         board[blankx][blanky], board[blankx][blanky + 1] = board[blankx][blanky + 1], board[blankx][blanky]
+     elif move == DOWN:
+         board[blankx][blanky], board[blankx][blanky - 1] = board[blankx][blanky - 1], board[blankx][blanky]
+-    elif move == LEFT:
++    elif move = LEFT:
+         board[blankx][blanky], board[blankx + 1][blanky] = board[blankx + 1][blanky], board[blankx][blanky]
+     elif move == RIGHT:
+         board[blankx][blanky], board[blankx - 1][blanky] = board[blankx - 1][blanky], board[blankx][blanky]

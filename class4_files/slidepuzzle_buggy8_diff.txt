@@ -1,0 +1,20 @@
+--- slidepuzzle.py	2018-03-11 10:53:37.405675519 -0400
++++ slidepuzzle_buggy8.py	2018-03-11 10:53:04.573565145 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Puzzle starts off with tiles shifted off by 1 space, and there are two blank spots.
++
++
+ # Slide Puzzle
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -132,7 +137,7 @@
+     # Return a board data structure with tiles in the solved state.
+     # For example, if BOARDWIDTH and BOARDHEIGHT are both 3, this function
+     # returns [[1, 4, 7], [2, 5, 8], [3, 6, BLANK]]
+-    counter = 1
++    counter = 0
+     board = []
+     for x in range(BOARDWIDTH):
+         column = []

@@ -4,6 +4,10 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+Class 4: The Sliding Game! Files in class4\_files (https://github.com/pygame2018/spring18/tree/master/class4_files) Notes: see class4.txt. Code:
+https://inventwithpython.com/slidepuzzle.py
+Reading: http://inventwithpython.com/pygame/chapter4.html
+
 Class 3: The memory puzzle continued. Files in class3\_files (https://github.com/pygame2018/spring18/tree/master/class3_files)
 https://github.com/pygame2018/spring18/raw/master/memorycheat3.py
 
