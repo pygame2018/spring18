@@ -4,7 +4,7 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
-Class 5: The Sliding Game continued! Files in class5\_files (https://github.com/pygame2018/spring18/tree/master/class4_files) Notes: see class5.txt. Code:
+Class 5: The Sliding Game continued! Files in class5\_files (https://github.com/pygame2018/spring18/tree/master/class5_files) Notes: see class5.txt. Code:
 https://github.com/pygame2018/spring18/raw/master/class5_files/slidepuzzle_test.py
 Reading: http://inventwithpython.com/pygame/chapter4.html
 

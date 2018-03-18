@@ -12,6 +12,7 @@ http://inventwithpython.com/pygame/chapter4.html
 1. The Sliding Game continued
 -----------------------------
 The original code: https://inventwithpython.com/slidepuzzle.py
+New code: https://github.com/pygame2018/spring18/raw/master/class5_files/slidepuzzle_test.py
 
 Testing and debugging a program (the "simple" way):
 
