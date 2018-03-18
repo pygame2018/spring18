@@ -1,0 +1,141 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Sliding Game continued
+- Testing and debugging a program (the "simple" way)
+
+2. Revisit some important programming concepts
+- How do you swap values between a pair of variables
+
+Text to read: Chapter 4 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter4.html
+
+1. The Sliding Game continued
+-----------------------------
+The original code: https://inventwithpython.com/slidepuzzle.py
+
+Testing and debugging a program (the "simple" way):
+
+As you probably have noticed, the GUI programs are a bit hard to
+diagnose! You have to re-run the whole program every time you made
+a small change to a function. This makes it inefficient - you would
+rather test a small function piece than test the whole program.
+
+Recall that when we use the Python's command line interface, we can
+directly type in some functions we want to test, with various input
+arguments to the function. So we want to do the same thing here. But,
+you can't test functions that uses pygame elements,
+such as drawing, animation, mouse/keyboard events, etc. because those
+things require the event-driven model that the command line interface
+does not support.
+
+So, the idea is:
+- Separate the GUI stuff (drawing and event-processing) and the non-GUI
+stuff (for this game, the board data structure, generating the board, 
+compute the moves, checking winning conditions, etc). In other words,
+separate the "drawing" and "computing" parts.
+
+- And, make the "drawing" part as simple as possible. Use data
+structures (like the board and moves) to encoded all the information
+the GUI objects need, and simply redraw the appearances when the data
+changes. The actual running of the game is simply a matter of
+modifying these data structure in reaction to the mouse/keyboard inputs.
+
+This way, you don't need to make huge changes to the code when you
+tweak the appearance of the game. In real game software companies,
+there is a "artistic design" team that is responsible for the GUI -
+from the shape/color/layout of the buttons to the pixels of each
+objects. Then there is a "core" team that does the computing part:
+design the data structures and the ways to manipulate them. Once they
+figure out the same data structure and functions they use in common,
+the two teams can completely go about their own ways without know how
+the other team did it.
+
+So look at the slidepuzzle code, find out which function are not
+"drawing"-related, and we will test them in command line. Look at
+these functions:
+
+- getStartingBoard
+- getBlankPosition
+- isValidMove
+- makeMove
+
+You see, this is really all you need to test playing the game: you
+just need the board data structure, and you can test out the moves
+one-by-one on the terminal.
+
+To do this, you need to use IDLE or open a terminal and run python
+there. Then import the slidepuzzle module:
+
+from slidepuzzle import *
+
+You can then type:
+b = getStartingBoard()     # get the starting board
+random.shuffle(b)          # shuffle the columns
+for x in range(4): random.shuffle(b[x])    # shuffle within the columns
+b                          # inspect the board data
+makeMove(b, 'up')          #  or makeMove(b, UP) 
+b                          # see the board again ...
+
+We can actually automate this, by write a small function that
+test it out using the terminal interface. See 
+slidepuzzle_test.py, import it, and run playTest()
+
+Exercise: in the playTest(), if you want the arrow keys to control the
+blank square (instead of the numbered square), what do you need to
+change?
+
+2. Revisit some important programming concepts
+----------------------------------------------
+
+- Variables and Assignments
+
+Obviously, once you opened up a game like this, you are not
+limited to test/debug the game functions. You could do all
+sorts of things, i.e. hack! It's a lot easier to change
+the board size (try this in slidepuzzle_test.py).
+
+Now that you have access to the board data structure, you can
+basically assign anything to it. For example, you can swap any
+two squares (empty or not) directly - as if you can just lift
+the squares up in the air and replace each other.
+
+Here is a general question: if you have two variables, how do
+you swap their contents? This really tests your understanding
+of "what is a variable?"
+
+Think variables as bottle that can hold liquids - coffee, tea,
+water, juice, etc. The content can change: you can assign coffee
+to one variable at one time, and assign it to tea later, and so on.
+Now, how do you exchange the contents of two bottles?
+
+You need:
+temp = a
+a = b
+b = a
+
+In python, there is a fancy way to do this, by using this syntax:
+a, b = b, a
+
+Now, you understand the meaning of this statement better:
+a = a + 1 
+
+- None
+
+Python has a special value called None. It basically means: there is
+no value associated with a variable, i.e. "nothing", or "value 
+non-existent", "not assigned". It is often used to represent missing
+values or optional values. Our game use None in the board data structure
+to represent the missing square:
+
+>>> from slidepuzzle import *
+>>> b = getStartingBoard()
+>>> b
+[[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, None]]
+>>> random.shuffle(b)
+>>> b
+[[2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, None], [1, 5, 9, 13]]
+
+Exercise: try swap some values in the board and solve it! 
+Hint: look at the playTest() function.
+
+All files are in: https://github.com/pygame2018/spring18/class5_files
