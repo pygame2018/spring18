@@ -1,0 +1,102 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Simulate Game
+- Add sound to a game.
+
+2. Revisit some important programming concepts
+- Swapping values continued:
+
+Text to read: Chapter 5 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter5.html
+
+1. The Simulate Game
+-----------------------------
+The code: https://inventwithpython.com/simulate.py
+Also need to download 4 sound files at:
+http://invpy.com/beep1.ogg
+http://invpy.com/beep2.ogg
+http://invpy.com/beep3.ogg
+http://invpy.com/beep4.ogg
+
+See a demo, familiar with the game, and then do some simple (one-line)
+debugging!
+
+- So easy to add sounds: basically
+BEEP1 = pygame.mixer.Sound('beep1.ogg')
+BEEP1.play()
+
+Some of you may find the code for this game somewhat simpler than the
+earlier ones. It is true the code is shorter, but one thing to watch
+out is that the event handling is somewhat more complicated because the
+game UI has two states: one that show the sequence and one that waits
+for your input. This is easily handled in the code by using and if-else
+statement (and switching the states back and force via the variable
+"waitingForInput") This is a common pattern:
+
+Inside a loop:
+
+if not waitingForInput:
+    ... do things
+    waitingForInput = True
+else:
+    ... do other things
+    waitingForInput = False
+
+- The event queue: 
+
+We normally handle events in the main loop, but sometimes (e. g. for
+better organization of the code), we use some additional functions
+that also check the event queue. In that case, if we pull and event
+off the queue and check it, but find out later that it is not what
+this function is expecting for, we need to put it back to the event
+queue, by calling:
+    pygame.event.post(event)
+
+Example:
+def checkForQuit():
+    for event in pygame.event.get(QUIT): # get all the QUIT events
+        terminate() # terminate if any QUIT events are present
+    for event in pygame.event.get(KEYUP): # get all the KEYUP events
+        if event.key == K_ESCAPE:
+            terminate() # terminate if the KEYUP event was for the Esc key
+        pygame.event.post(event) # put the other KEYUP event objects back
+
+
+
+2. Revisit some important programming concepts
+----------------------------------------------
+
+- Variables and Assignments
+
+Last week we talked about how to swap values of variables:
+
+You need:
+temp = a
+a = b
+b = a
+
+If we make a function: 
+
+a=1
+b=2
+
+def swap(x, y):
+    temp = x
+    x = y
+    y = temp
+
+swap(a,b)
+
+>>> a,b
+(1, 2)
+>>> swap(a,b)
+>>> a,b
+(1, 2)  # not swapped at all
+
+Why? Well, the arguments x, and y in the function definition are
+called the "formal parameters", they are essentially a copy of the
+actual arguments (a and b) when the function is invoked. So swapping
+of the formal parameters (i.e. the swapping of a copy of the real
+arguments) are not going to result in the swap of actual parameters.
+
+All files are in: https://github.com/pygame2018/spring18/class6_files

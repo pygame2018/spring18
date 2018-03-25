@@ -1,0 +1,20 @@
+--- simulate.py	2018-03-24 09:13:04.552436231 -0400
++++ simulate_buggy5.py	2018-03-25 10:57:23.296764731 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Window appears too tall.
++
++
+ # Simulate (a Simon clone)
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -43,7 +48,7 @@
+ 
+     pygame.init()
+     FPSCLOCK = pygame.time.Clock()
+-    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
++    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWWIDTH))
+     pygame.display.set_caption('Simulate')
+ 
+     BASICFONT = pygame.font.Font('freesansbold.ttf', 16)
