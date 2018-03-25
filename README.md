@@ -5,7 +5,7 @@ simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
 Class 6: A new game! Simulate. Files in in class6\_files (https://github.com/pygame2018/spring18/tree/master/class6_files) Notes: see class6.txt. Downloads:
-Code: http://invpy.com/slidepuzzle.py
+Code: http://invpy.com/simulate.py
 Sound files (save to same directory as the python code): 
 beep1: http://invpy.com/beep1.ogg
 beep2: http://invpy.com/beep2.ogg
