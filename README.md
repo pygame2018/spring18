@@ -7,12 +7,11 @@ the GUI games, using the pygame module.
 Class 6: A new game! Simulate. Files in in class6\_files (https://github.com/pygame2018/spring18/tree/master/class6_files) Notes: see class6.txt. Downloads:
 Code: http://invpy.com/slidepuzzle.py
 Sound files (save to same directory as the python code): 
-http://invpy.com/beep1.ogg
-http://invpy.com/beep2.ogg
-http://invpy.com/beep3.ogg
-http://invpy.com/beep4.ogg
+beep1: http://invpy.com/beep1.ogg
+beep2: http://invpy.com/beep2.ogg
+beep3: http://invpy.com/beep3.ogg
+beep4: http://invpy.com/beep4.ogg
 
-https://github.com/pygame2018/spring18/raw/master/class6_files/simulate.py
 Reading: http://inventwithpython.com/pygame/chapter5.html
 
 Class 5: The Sliding Game continued! Files in class5\_files (https://github.com/pygame2018/spring18/tree/master/class5_files) Notes: see class5.txt. Code:
