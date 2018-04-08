@@ -4,7 +4,8 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
-Class 7: Wormy! (a Nibbles clone) Files in in class7\_files (https://github.com/pygame2018/spring18/tree/master/class7_files) Notes: see class7.txt. Downloads:
+Class 7: Wormy! (a Nibbles clone) Files in in class7\_files (https://github.com/pygame2018/spring18/tree/master/class7_files) Notes: see class7.txt.(https://github.com/pygame2018/spring18/blob/master/class7.txt)
+Downloads:
 Code: http://invpy.com/wormy.py
 
 Reading: http://inventwithpython.com/pygame/chapter6.html
