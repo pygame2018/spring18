@@ -1,0 +1,20 @@
+--- wormy.py	2018-04-08 11:14:03.976703281 -0400
++++ wormy_buggy3.py	2018-04-08 11:14:24.204764248 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Pressing down makes the worm go up.
++
++
+ # Wormy (a Nibbles clone)
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -92,7 +97,7 @@
+         if direction == UP:
+             newHead = {'x': wormCoords[HEAD]['x'], 'y': wormCoords[HEAD]['y'] - 1}
+         elif direction == DOWN:
+-            newHead = {'x': wormCoords[HEAD]['x'], 'y': wormCoords[HEAD]['y'] + 1}
++            newHead = {'x': wormCoords[HEAD]['x'], 'y': wormCoords[HEAD]['y'] - 1}
+         elif direction == LEFT:
+             newHead = {'x': wormCoords[HEAD]['x'] - 1, 'y': wormCoords[HEAD]['y']}
+         elif direction == RIGHT:

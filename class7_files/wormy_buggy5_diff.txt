@@ -1,0 +1,46 @@
+--- wormy.py	2018-04-08 11:14:03.976703281 -0400
++++ wormy_buggy5.py	2018-04-08 11:14:24.204764248 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Program hangs with a black screen when it first starts.
++
++
+ # Wormy (a Nibbles clone)
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -139,20 +144,20 @@
+         rotatedRect1.center = (WINDOWWIDTH / 2, WINDOWHEIGHT / 2)
+         DISPLAYSURF.blit(rotatedSurf1, rotatedRect1)
+ 
+-        rotatedSurf2 = pygame.transform.rotate(titleSurf2, degrees2)
+-        rotatedRect2 = rotatedSurf2.get_rect()
+-        rotatedRect2.center = (WINDOWWIDTH / 2, WINDOWHEIGHT / 2)
+-        DISPLAYSURF.blit(rotatedSurf2, rotatedRect2)
+-
+-        drawPressKeyMsg()
+-
+-        if checkForKeyPress():
+-            pygame.event.get() # clear event queue
+-            return
+-        pygame.display.update()
+-        FPSCLOCK.tick(FPS)
+-        degrees1 += 3 # rotate by 3 degrees each frame
+-        degrees2 += 7 # rotate by 7 degrees each frame
++    rotatedSurf2 = pygame.transform.rotate(titleSurf2, degrees2)
++    rotatedRect2 = rotatedSurf2.get_rect()
++    rotatedRect2.center = (WINDOWWIDTH / 2, WINDOWHEIGHT / 2)
++    DISPLAYSURF.blit(rotatedSurf2, rotatedRect2)
++
++    drawPressKeyMsg()
++
++    if checkForKeyPress():
++        pygame.event.get() # clear event queue
++        return
++    pygame.display.update()
++    FPSCLOCK.tick(FPS)
++    degrees1 += 3 # rotate by 3 degrees each frame
++    degrees2 += 7 # rotate by 7 degrees each frame
+ 
+ 
+ def terminate():

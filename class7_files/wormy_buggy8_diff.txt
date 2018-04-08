@@ -1,0 +1,29 @@
+--- wormy.py	2018-04-08 11:14:03.976703281 -0400
++++ wormy_buggy8.py	2018-04-08 11:14:24.204764248 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Player can't change direction, and pressing the left arrow key causes a game over.
++
++
+ # Wormy (a Nibbles clone)
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -63,13 +68,13 @@
+             if event.type == QUIT:
+                 terminate()
+             elif event.type == KEYDOWN:
+-                if (event.key == K_LEFT or event.key == K_a) and direction != RIGHT:
++                if (event.key == K_LEFT or event.key == K_a) and direction == RIGHT:
+                     direction = LEFT
+-                elif (event.key == K_RIGHT or event.key == K_d) and direction != LEFT:
++                elif (event.key == K_RIGHT or event.key == K_d) and direction == LEFT:
+                     direction = RIGHT
+-                elif (event.key == K_UP or event.key == K_w) and direction != DOWN:
++                elif (event.key == K_UP or event.key == K_w) and direction == DOWN:
+                     direction = UP
+-                elif (event.key == K_DOWN or event.key == K_s) and direction != UP:
++                elif (event.key == K_DOWN or event.key == K_s) and direction == UP:
+                     direction = DOWN
+                 elif event.key == K_ESCAPE:
+                     terminate()

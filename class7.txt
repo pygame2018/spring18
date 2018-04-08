@@ -1,0 +1,81 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Wormy Game
+- The coordinate system
+- When you have a lot of cells ...
+
+2. Tuning a game
+- Making a start screen
+- Pacing the game
+
+Text to read: Chapter 6 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter6.html
+
+1. The Wormy Game
+-----------------------------
+The code: http://invpy.com/wormy.py
+
+This is a simple game that requires a little bit of reflex!
+
+See a demo, familiarize yourself with the game, and then do some
+modding!
+
+Ideas:
+- add a sound to each apply eaten by the worm. Refer to
+the class 6 notes about adding sounds in pygame.
+- change size of cell and/or screen
+- make more than one apples each time
+
+As usual, there are some simple (one-line) debugging in class7_files.
+
+- Coordinate system
+
+The coordinate system here is simply a (x,y) pair that locates each pixel
+in the screen. It always starts with (0,0) at top-left corner. (Unlike in math,
+in computer science the y-axis points downwards!)
+
+The game screen is divided into small cells (X rows and Y columns). So
+you can use (nx, ny) to refer to the column at nx'th row and
+ny'column. Each cell has its own top-left pixel location and a
+size. And usually you also want some margins around the edges of the
+screen, so the top-left corner coordinate of the cell is
+(leftMargin+nx*cellWidth, topMargin+ny*cellHeight). What is the
+bottom-right location of the cell (nx, ny)? This is important
+because you need to figure out which cell (nx, ny) was being clicked 
+on (from mouse click location (x,y)):
+
+nx = floor( (x-leftMargin)/CellWidth )
+ny = floor( (y-topMargin)/CellHeight )
+
+All the games we have studied so far uses this formula.
+
+- Where there are so many cells:
+
+Now we have a lot of cells (you can change the size of the cells or
+screen size to make more cells). When this happens, it is impractical
+to redraw each individual cell for each frame, because the drawing
+does takes a bit of time! So the solution is to only draw the worm
+(and the apple). The worm can be represented as a list of cells.
+
+The clever way to draw each worm movement is to put the last cell in
+the list and put it in the front of the first cell in the worm's
+moving direction, which will be worm's new head.
+
+2. A few things about this game:
+
+- The "splash screen" is a good way to start the game. Since this
+is a reflex game, you don't want the game to be over immediately
+when the screen showed and the user wasn't been able respond at all.
+So it is important to have a splash screen and 'press a key to start'.
+
+- Even with a splash screen, you still need to act quickly or it's
+game over. What can you do to make this a bit more friendly?
+
+- Also, the game as a steady pace. But it will be better if you speed
+up the game (more difficult) when the user got better. How do you
+do this?
+
+Well, one way to do this is to change the FPS and tie its value with
+the length of the worm.
+
+All files are in: https://github.com/pygame2018/spring18/class7_files
