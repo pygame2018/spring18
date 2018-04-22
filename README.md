@@ -5,9 +5,9 @@ simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
 Class 8: Tetromino! (a Tetris clone)
-Files in in class8\_files (https://github.com/pygame2018/spring18/tree/master/class8_files)
-Notes: see class8.txt.(https://github.com/pygame2018/spring18/blob/master/class8.txt)
-Code: http://invpy.com/tetromino.py
+- Files in in class8\_files (https://github.com/pygame2018/spring18/tree/master/class8_files)
+- Notes: see class8.txt.(https://github.com/pygame2018/spring18/blob/master/class8.txt)
+- Code: http://invpy.com/tetromino.py
 Also download the sound files to the same directory:
 - tetrisb.mid  http://invpy.com/tetrisb.mid (use "save the link as ..." to download)
 - tetrisc.mid  http://invpy.com/tetrisc.mid (use "save the link as ..." to download)
