@@ -78,4 +78,13 @@ If a piece can move down further: isValidPosition()
 - board[x][y] record a color if it is occupied, None otherwise
 - for the falling piece, check each non-blank box with the board
 
+What else to do:
+- Holding down the rotation key does not work. Can we make it work?
+
+- You may improve the rotation by choose separate keys for clockwise/counter-clockwise rotations. This will be quite useful as it saves keystrokes.
+
+- A very awesome hack is to make a piece going up instead of going down. Think about
+  how to do this. You obviously need a new key for this, but probably not much new
+  code.
+
 All files are in: https://github.com/pygame2018/spring18/class8_files
