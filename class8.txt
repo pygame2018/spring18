@@ -1,0 +1,81 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Tetromino Game
+- Differences/Similarities between Tetromino and Wormy
+- A few tricks: pause the game; holding down a key; timing calculations
+
+2. Game design issues
+- How to handle rotations
+- Pacing the game
+
+Text to read: Chapter 7 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter7.html
+
+1. The Tetromino Game
+-----------------------------
+The code: http://invpy.com/tetromino.py
+Also the sound files:
+- tetrisb.mid  http://invpy.com/tetrisb.mid
+- tetrisc.mid  http://invpy.com/tetrisc.mid
+
+Tetris is a fun game and has its own nomenclature!
+- Board (10x20 cells)
+- Box  (a cell)
+- Piece (4 boxes of various shapes)
+- Shape (T/S/Z/J/L/I/O)
+- Template (shapes data structures respresenting all rotations)
+- Landed (a piece touches the bottom or a box on board)
+
+See a demo, familiarize yourself with the game, and then do some
+modding!
+
+A few things you can do:
+Ideas:
+- change size of board, speed of pieces, etc
+  - There is a 'level' concept: pieces fall faster when at higher player level.
+    Change this to make a game a bit easier.
+- The music is interestig - it's random. You can add a few new sounds (beeps) and
+  apply them to different scenarios, like a clearing a row, landing a piece,
+  rotate a piece, dropping a piece (e.g. keyboard events)
+- Print out a help text for keypresses: UP key=rotate, DOWN=down, LEFT/RIGHT to move, SPACE=land, p=pause
+
+Reading the code:
+- Each piece is a map: contains {shape, rotation, x, y, color}
+- A lot of code is to define the templates (all rotations for the 7 shapes)
+Note that some shapes have some symmetry so some rotations are omitted (like
+O and I). 
+- Although shapes have 4 boxes, the templates are 5 by 5. The important
+thing is to make the last row empty (otherwise, rotation would complicate
+with the falling).
+- The falling logic is based on the 5x5 templates, i.e. it is the 5x5 boxes
+that are to be redrawn.
+
+Pausing a game:
+- This is definitely very useful, and very easy too: just add a new key event
+and a new function to draw the pause screen. The function must handle own
+events and the redraw (e.g. call update(), and advance the tick)
+
+Timing calculations:
+- The 'time' package that you imported has the time.time() function
+that returns the current time (number of seconds since midnight 1/1/1970)
+- time.sleep(x) sleeps for x seconds
+- call begin=time.time() to mark the start, and time.time()-start is
+  the elapsed time.
+
+Holding down a key:
+- Use the KEYDOWN event
+- and the timing calculations 
+
+The Preview feature. How do you do this? Ask yourself these *specific* questions: 
+  - Where to display the next piece? 
+  - When to display the next piece?
+  - How to draw a piece (is there a function to do this?)
+  - When to refresh (i.e. erase the current hint piece)
+  - What data structure do you need (i.e. a variable or variables)
+
+If a piece can move down further: isValidPosition()
+- piece has ['x'] ['y'] element for top-left corner
+- board[x][y] record a color if it is occupied, None otherwise
+- for the falling piece, check each non-blank box with the board
+
+All files are in: https://github.com/pygame2018/spring18/class8_files
