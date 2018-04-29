@@ -1,0 +1,57 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. The Tetromino Game Continued
+
+-----------------------------------
+The key data structures in the tetromino game is actually in the
+definition of shapes.
+
+Here we can show that, only by changing the definition of the shapes,
+we can change the games to do something different.
+
+1. Use 3-box shapes
+-------------------
+
+- This is fairly easy: there are all 6 3-box pieces:
+
+OOO O  OO OO  O   O
+    O  O   O  OO OO
+    O
+
+First two are actually in the same template; and the rest four belong
+to another template, so only 2 templates are needed.
+
+For each template, define the shape pattern by rotations.
+
+The result code is tetro3.py.
+
+The only new code is:
+- the definition of I3_SHAPE_TEMPLATE and L3_SHAPE_TEMPLATE.
+  Each template shape is a 5x5 list of strings, where a '.' is blank
+  and 'O' is a box.
+- the redefined variable PIECES
+
+2. 5-box shapes
+---------------
+
+We can use 5-box shapes, but notice that this would be rather complicated:
+see tetro5.py. Similarly, the code changes are:
+- new definition of 13 new templates (are they complete?)
+- again, the PIECES variable that lists the 13 new templates
+
+The game is not very fun to play, because some shapes are too hard
+to fit each other. A good exercise to limit the PIECES to simpler
+templates. And, we need to slow down the pace of the game a bit too.
+
+
+3. Exercises
+------------
+
+Obvious, in tetris we can have pieces with different box sizes too.
+Now you probably have the idea for adding 1-box pieces and 2-box pieces,
+and create a game that would have random sized pieces. All with very
+limited changes to this game!
+
+Also, some simple bugs to fix!
+
+All files are in: https://github.com/pygame2018/spring18/class9_files

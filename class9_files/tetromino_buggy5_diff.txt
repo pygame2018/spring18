@@ -1,0 +1,20 @@
+--- tetromino.py	2018-04-29 12:32:21.178985959 -0400
++++ tetromino_buggy5.py	2018-04-29 13:59:01.289378866 -0400
+@@ -1,3 +1,8 @@
++# This version of the game has a bug in it. See if you can figure out how to fix it.
++# http://inventwithpython.com/pygame/buggy
++# Bug Description: Game crashes when a piece lands ("IndexError: list assignment index out of range"), or pieces change shape after landing.
++
++
+ # Tetromino (a Tetris clone)
+ # By Al Sweigart al@inventwithpython.com
+ # http://inventwithpython.com/pygame
+@@ -375,7 +380,7 @@
+     # fill in the board based on piece's location, shape, and rotation
+     for x in range(TEMPLATEWIDTH):
+         for y in range(TEMPLATEHEIGHT):
+-            if PIECES[piece['shape']][piece['rotation']][y][x] != BLANK:
++            if PIECES[piece['shape']][piece['rotation']][x][y] != BLANK:
+                 board[x + piece['x']][y + piece['y']] = piece['color']
+ 
+ 
