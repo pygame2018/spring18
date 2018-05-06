@@ -6,7 +6,7 @@ the GUI games, using the pygame module.
 
 Class 10: Squirrel eat Squirrel
 - Files in  class10\_files (https://github.com/pygame2018/spring18/tree/master/class10_files)
-- Notes: see class10.txt.(https://github.com/pygame2018/spring18/blob/master/class9.txt)
+- Notes: see class10.txt.(https://github.com/pygame2018/spring18/blob/master/class10.txt)
 - Code: squirrel.py: http://invpy.com/squirrel.py
 Also download the image files: to the same directory (use save link as ...):
 -  Game icon: http://invpy.com/gameicon.png
