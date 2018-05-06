@@ -1,0 +1,74 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. Squirrel eat Squirrel
+- Sprites (use external images)
+- Win conditions: the 'mission' 
+
+2. Programming/Game design issues
+- Camera: how the screen moves when you (the main character) move
+- Type: a bag of values with certain names attached to them.
+        Think it as a sort of dictionary structure in Python.
+  Object of a certain type
+
+Text to read: Chapter 8 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter8.html
+
+1. The Game
+-----------------------------
+The code: http://invpy.com/squirrel.py
+Also the image files: download to the same directory (use save link as ...):
+-  http://invpy.com/gameicon.png
+-  http://invpy.com/squirrel.png
+-  http://invpy.com/grass1.png
+-  http://invpy.com/grass2.png
+-  http://invpy.com/grass3.png
+-  http://invpy.com/grass4.png
+
+Reading the code:
+- One thing you probably have noticed is that the main() function is
+typically very short. Instead, there is a runGame() function that handels
+the events and redrawing. Better code organization is one reason, but
+it is also because the runGame() function needs to be called more than once
+(for instance, in a loop).
+
+- The first thing you do is to play the game, and try to win!
+  You have to eat smaller squirrels to grow, but don't bump into 
+  bigger squirrels - three hits and game is over for you!
+
+- First 'mod' is to try to win the game. Read the code and
+  think about ways to win.... There are really many ways.
+
+- Don't like squirrels? Try get some other images (from the web).
+  Make sure you search for png (portable network graphics) files.
+
+- Sprites: based on an image file, but can be flipped/rotated, etc:
+  L_SQUIR_IMG = pygame.image.load('squirrel.png')
+  R_SQUIR_IMG = pygame.transform.flip(L_SQUIR_IMG, True, False)
+
+  Create a surface object, and rectangle area:
+    sObj = pygame.transform.scale(L_SQUIR_IMG, (STARTSIZE, STARTSIZE))
+    rect = pygame.Rect(x,y,width,height)
+
+  Draw them:
+   DISPLAYSURF.blit(sObj, rect)
+
+- The screen is only part of the world! So you are in a 'view'.
+
+- Camera: for this game, you want to camera to follow you when it moves
+  a certain distance way from the center of the window (CAMERASLACK=90)
+
+- Objects:
+    Common components: x (=left), y (=top), rect (pygame.Rect object) 
+    Grass: grassImage (a number from 1 to 4)
+    Squirrel:  surface, movex, movey, width, height, 
+               bounce, bouncrate, bounceheight
+    PlayerSquirrel:  surface, facing, size, bounce, health
+
+- So now the redrawing part is easy: just compute all the
+  objects (there internal components), and draw them!
+
+- Remove objects out-of-view, and add more if not enough. 
+  (We don't track all objects.) 
+
+All files are in: https://github.com/pygame2018/spring18/class10_files
+

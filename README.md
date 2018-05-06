@@ -4,6 +4,20 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+Class 10: Squirrel eat Squirrel
+- Files in  class10\_files (https://github.com/pygame2018/spring18/tree/master/class10_files)
+- Notes: see class10.txt.(https://github.com/pygame2018/spring18/blob/master/class9.txt)
+- Code: squirrel.py: http://invpy.com/squirrel.py
+Also download the image files: to the same directory (use save link as ...):
+-  Game icon: http://invpy.com/gameicon.png
+-  Squirrel sprite: http://invpy.com/squirrel.png
+-  Grass shape 1: http://invpy.com/grass1.png
+-  Grass shape 1: http://invpy.com/grass2.png
+-  Grass shape 1: http://invpy.com/grass3.png
+-  Grass shape 1: http://invpy.com/grass4.png
+
+
+
 Class 9: Tetromino continued
 - Files in in class9\_files (https://github.com/pygame2018/spring18/tree/master/class9_files)
 - Notes: see class9.txt.(https://github.com/pygame2018/spring18/blob/master/class9.txt)
