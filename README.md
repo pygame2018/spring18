@@ -9,6 +9,10 @@ Class 11: Mod for Squirrel eat Squirrel
 - Notes: see class11.txt.(https://github.com/pygame2018/spring18/blob/master/class11.txt)
 Download: in addition to the image files you downloaded for last class, you need to download the following, in the same directory:
 - New code: squirrel_gun.py https://github.com/pygame2018/spring18/raw/master/class11_files/squirrel_gun.py
+
+The difference between this version and the old version:
+https://raw.githubusercontent.com/pygame2018/spring18/master/class11_files/squirrel_gun.py_diff.txt
+
 - New image: squirrel_gun.png https://github.com/pygame2018/spring18/raw/master/class11_files/squirrel_gun.png
 - New image: coin.png https://github.com/pygame2018/spring18/raw/master/class11_files/coin.png
 
@@ -20,9 +24,9 @@ Also download the image files: to the same directory (use save link as ...):
 -  Game icon: http://invpy.com/gameicon.png
 -  Squirrel sprite: http://invpy.com/squirrel.png
 -  Grass shape 1: http://invpy.com/grass1.png
--  Grass shape 1: http://invpy.com/grass2.png
--  Grass shape 1: http://invpy.com/grass3.png
--  Grass shape 1: http://invpy.com/grass4.png
+-  Grass shape 2: http://invpy.com/grass2.png
+-  Grass shape 3: http://invpy.com/grass3.png
+-  Grass shape 4: http://invpy.com/grass4.png
 
 
 
