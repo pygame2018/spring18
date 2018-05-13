@@ -1,0 +1,122 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. Squirrel eat Squirrel, version 2
+- Some mods added
+
+2. Programming/Game design issues
+- Global variables and how to declare them
+
+Text to read: Chapter 8 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter8.html
+
+1. The Game Modified
+-----------------------------
+The New code: squirrel_gun.py
+Also the new image files: download to the same directory (use save link as ...):
+- New file: squirrel_gun.png
+- New file: coin.png
+
+The difference between squirrel_gun.py and last class' squirrel.py is here:
+- squirrel_gun.py_diff.txt
+
+These are the old files, but you still need them
+-  http://invpy.com/gameicon.png
+-  http://invpy.com/squirrel.png
+-  http://invpy.com/grass1.png
+-  http://invpy.com/grass2.png
+-  http://invpy.com/grass3.png
+-  http://invpy.com/grass4.png
+
+The Modified Game
+-----------------
+
+There are a few modifications:
+
+1) Notice the new squirrel image? It's easy to change the image of the sprite.
+Often, drawing is not a developer's forte. A typical game needs lots of
+sprites, so it is best to leave this job to a team of artists ...
+
+2) Mouse and keyboard together? In some games you need both hands: left hand
+does the movements and right hand does the mouse click. This mod will give you
+just that! You click (e.g. snipe at) a squirrel and it dies! The dead squirrel
+is eaten by you and you may grow a little bigger. So you don't have to dodge
+the squirrels bigger than you - you can destroy them!
+
+3) Also, you see that in a lot of games, when a monster dies you found
+some treasure on the ground. Well, we have something rather simple:
+just flash a gold coin.
+
+Explained:
+----------
+
+If you open up the diff file, you can see how this mod is done. Here is
+the detailed explanations:
+
+1. I changed FPS to 15 instead of 30. This is just for testing. It makes
+the game a lot easier to play so you can test things out.
+
+2. I declared two new global variables in main(): this is to announce
+that GOLDCOIN and clickedSquirrel are names that universally available
+to all functions ... it is not used by this main() function
+alone. GOLDCOIN will be used to draw the coin, and clickedSquirrel to
+record the squirrel we just clicked.
+
+3. I changed the global variable L_SQUIR_IMG to use a different png file
+
+4. I am setting up the GOLDCOIN value and initialize clickedSquirrel
+to be None.
+
+5. Next, we are in the runGame() function. Again, since clickedSquirrel
+is defined elsewhere and used here, we need to declare it as global.
+
+6. Now, change the code to draw the other squirrels. Remember, we recorded
+the squirrel we sniped at in the variable clickedSquirrel, so here we check
+if the current squirrel we are about to draw is the clickedSquirrel. If not,
+do the same thing as before; otherwise, draw the gold coin, change the 
+player squirrel's 'size' and 'surface' (remember, we use these variable
+to draw the player squirrel). And lastly, we remove the clicked squirrel
+from the list so it is gone. Adios!
+
+7. Set clickedSquirrel back to None to clear out this value and ready for the
+next loop.
+
+8. Add the mouse event handling. We have seen similar things before, in the
+simulate game, for example. Here all we do is to detect the event, find
+the mouseclick position, and call a helper function to find the clickedSquirrel.
+
+9. Finally, the helper function getClickedSquirrel(). Remember the camera
+thing? The actual location of the click (which is relative to the
+top-left corner of the screen) need to add the camera's x and y offset
+to reflect the actual (world) position. In other words, the top-left
+corner of the screen is (camerax, cameray) in the 'real' (world) screen.
+This function simply iterate over the list of other squirrels and return
+the match found, or return None.
+
+Exercise:
+---------
+
+1) Now you see all the other squirrels are also the squirrel with a gun.
+But this is really not what we wanted. Can you make all the other squirrels
+look like the one without a gun? 
+
+You basically need to declare some global variable and use that instead of the
+L_SQUIR_IMG for the list of other squirrels.
+
+2) The mouseclick is not very accurate. Figure out why?
+
+3) What if you want some animation for the mouse click? Like a 'bam'
+on the screen. This should be pretty easy to do, actually!
+Just find some 'bam' image and draw it in the mouse event handler.
+
+4) If you want to show the bullet, then you need to do a bit more.
+Basically, you need to have a bullet object, and instead of
+calculate the clickedSquirrel in the event handler, you need to
+calculate the location of the bullet before you draw the other
+squirrels. If the bullet hit a squirrel, then flash the
+gold coin and remove the squirrel. Otherwise, draw the bullet.
+
+5) Add any bells and whistles as you like!
+
+All files are in: https://github.com/pygame2018/spring18/class11_files
+
+

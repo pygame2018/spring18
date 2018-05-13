@@ -1,0 +1,93 @@
+--- squirrel.py	2018-05-13 11:53:02.399204438 -0400
++++ squirrel_gun.py	2018-05-13 12:06:28.890033186 -0400
+@@ -6,7 +6,7 @@
+ import random, sys, time, math, pygame
+ from pygame.locals import *
+ 
+-FPS = 30 # frames per second to update the screen
++FPS = 15 # frames per second to update the screen
+ WINWIDTH = 640 # width of the program's window, in pixels
+ WINHEIGHT = 480 # height in pixels
+ HALF_WINWIDTH = int(WINWIDTH / 2)
+@@ -61,7 +61,7 @@
+ """
+ 
+ def main():
+-    global FPSCLOCK, DISPLAYSURF, BASICFONT, L_SQUIR_IMG, R_SQUIR_IMG, GRASSIMAGES
++    global FPSCLOCK, DISPLAYSURF, BASICFONT, L_SQUIR_IMG, R_SQUIR_IMG, GRASSIMAGES, GOLDCOIN, clickedSquirrel
+ 
+     pygame.init()
+     FPSCLOCK = pygame.time.Clock()
+@@ -71,17 +71,25 @@
+     BASICFONT = pygame.font.Font('freesansbold.ttf', 32)
+ 
+     # load the image files
+-    L_SQUIR_IMG = pygame.image.load('squirrel.png')
++    L_SQUIR_IMG = pygame.image.load('squirrel_gun.png')
+     R_SQUIR_IMG = pygame.transform.flip(L_SQUIR_IMG, True, False)
+     GRASSIMAGES = []
+     for i in range(1, 5):
+         GRASSIMAGES.append(pygame.image.load('grass%s.png' % i))
+ 
++    GOLDCOINIMG = pygame.image.load('coin.png')
++    GOLDCOIN = pygame.transform.scale(GOLDCOINIMG, (50,50))
++
++    # record the clicked squirrel
++    clickedSquirrel = None
++
+     while True:
+         runGame()
+ 
+ 
+ def runGame():
++    global clickedSquirrel
++
+     # set up variables for the start of a new game
+     invulnerableMode = False  # if the player is invulnerable
+     invulnerableStartTime = 0 # time the player became invulnerable
+@@ -196,8 +204,22 @@
+                                          sObj['y'] - cameray - getBounceAmount(sObj['bounce'], sObj['bouncerate'], sObj['bounceheight']),
+                                          sObj['width'],
+                                          sObj['height']) )
++            if (sObj != clickedSquirrel):
+             DISPLAYSURF.blit(sObj['surface'], sObj['rect'])
++            else: # found the squirrel
++                # draw gold coin
++                DISPLAYSURF.blit(GOLDCOIN, sObj['rect'])
++                # change the size and surface
++                playerObj['size'] += int( (sObj['width'] * sObj['height'])**0.2 ) + 1
++                if playerObj['facing'] == LEFT:
++                    playerObj['surface'] = pygame.transform.scale(L_SQUIR_IMG, (playerObj['size'], playerObj['size']))
++                if playerObj['facing'] == RIGHT:
++                    playerObj['surface'] = pygame.transform.scale(R_SQUIR_IMG, (playerObj['size'], playerObj['size']))
++                # remove the squirrel clicked on
++                squirrelObjs.remove(sObj)
+ 
++        # clear the clicked squirrel
++        clickedSquirrel = None
+ 
+         # draw the player squirrel
+         flashIsOn = round(time.time(), 1) * 10 % 2 == 1
+@@ -216,6 +238,9 @@
+             if event.type == QUIT:
+                 terminate()
+ 
++            elif event.type == MOUSEBUTTONUP:
++                mousex, mousey = event.pos
++                clickedSquirrel = getClickedSquirrel(mousex, mousey, camerax, cameray, squirrelObjs)
+             elif event.type == KEYDOWN:
+                 if event.key in (K_UP, K_w):
+                     moveDown = False
+@@ -352,6 +377,12 @@
+         if not objRect.colliderect(cameraRect):
+             return x, y
+ 
++def getClickedSquirrel(mousex, mousey, camerax, cameray, allsqObjs):
++    for sObj in allsqObjs:
++        if (sObj['x'] <= mousex+camerax <= sObj['x']+sObj['width'] and \
++            sObj['y'] <= mousey+cameray <= sObj['y']+sObj['height']):
++            return sObj
++    return None
+ 
+ def makeNewSquirrel(camerax, cameray):
+     sq = {}

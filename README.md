@@ -4,6 +4,14 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+Class 11: Mod for Squirrel eat Squirrel
+- Files in  class11\_files (https://github.com/pygame2018/spring18/tree/master/class11_files)
+- Notes: see class11.txt.(https://github.com/pygame2018/spring18/blob/master/class11.txt)
+Download: in addition to the image files you downloaded for last class, you need to download the following, in the same directory:
+- New code: squirrel_gun.py https://github.com/pygame2018/spring18/raw/master/class11_files/squirrel_gun.py
+- New image: squirrel_gun.png https://github.com/pygame2018/spring18/raw/master/class11_files/squirrel_gun.png
+- New image: coin.png https://github.com/pygame2018/spring18/raw/master/class11_files/coin.png
+
 Class 10: Squirrel eat Squirrel
 - Files in  class10\_files (https://github.com/pygame2018/spring18/tree/master/class10_files)
 - Notes: see class10.txt.(https://github.com/pygame2018/spring18/blob/master/class10.txt)
