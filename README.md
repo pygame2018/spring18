@@ -4,11 +4,12 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
-Class 12: Star Pusher!  - Files in class12\_files
+Class 12: Star Pusher!
+- Files in class12\_files
 (https://github.com/pygame2018/spring18/tree/master/class12_files) -
-Notes: see
+- Notes: see
 class12.txt.(https://github.com/pygame2018/spring18/blob/master/class12.txt)
-Download: starPusherImages.zip: http://invpy.com/starPusherImages.zip
+- Download: starPusherImages.zip: http://invpy.com/starPusherImages.zip
 Then unzip the zip archive. The unzipped files includes both
 starpusher.py (the program) and starPusherLevels.txt (the levels
 file), as well as some image files.
