@@ -1,0 +1,84 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. Star Pusher
+- Level design: using external source (files)
+  Often, you want the game to be able to load different maps/levels. 
+  Since the game play itself is same for all levels, it makes sense
+  to use some external sources to encode them rather than writing them directly
+  in the program. This way you can have part of team creating the game 
+  content and not worrying about programming! In this game, the levels
+  are simple text files, so you can just use a text editor to create
+  game contents.
+
+  This is also a common practice to reduce the complexity of game making.
+
+Text to read: Chapter 9 of 'Making Games with Python & Pygame'
+http://inventwithpython.com/pygame/chapter9.html
+
+1. Star Pusher
+-----------------------------
+This is a "box pusher" type of puzzle game (e.g. Sokoban). You can only push,
+not pull, boxes. Once a box is pushed into a corner and cannot move, the level
+has to be restarted.
+
+What to download:
+- All files are in one zip archive: starPusherImages.zip: http://invpy.com/starPusherImages.zip
+  After the download, You need to unzip the zip file.
+
+- What is in it: 
+  - The python program: startpusher.py:  http://invpy.com/starpusher.py
+  - The level file: starPusherLevels.txt: http://invpy.com/starPusherLevels.txt
+  - Some images (sprites) (Total 18 of them).
+
+- To run it: in IDLE, open the file starpusher.py and press F5.
+
+How to play it:
+--------------
+Use arrow keys to move
+key 'p' to change player image
+Backspace to reset current level
+'n' for next level
+'b' for back a level
+Escape to quit
+a/s/d/w to move camera (only useful when the map is bigger than screen)
+
+Play
+----
+Play a few levels, and then think about what kind of changes (a.k.a. mods)
+you would like to see. 
+
+If a level is too hard, you can go back to the starPusherLevels.txt
+and modify the level design. The format of the levels file is actually
+very simple:
+; http://sokobano.de/wiki/index.php?title=Level_format
+;   @ - The starting position of the player.
+;   $ - The starting position for a pushable star.
+;   . - A goal where a star needs to be pushed.
+;   + - Player & goal
+;   * - Star & goal
+;  (space) - an empty open space.
+;   # - A wall.
+;   ; - comment. a blank line signals a new level
+
+More levels are at http://sneezingtiger.com/sokoban/levels.html
+
+Choose 'View as text' to see the text format. You can cut and paste
+a design, save it as a file, and rename it 'starPusherLevels.txt'
+and restart the game. Or simply modify the starpusher.py program
+to replace the levels file name to the one you just saved. Now you can play
+levels other people designed. Or you can design your own level.
+
+I also included a different set of levels (in sasquatch.py and sasquatchLevels.txt - download them in class12_files)
+
+Exercise:
+--------
+
+- Use a text editor to create one level yourself.
+
+- Think about ways to improve the game play. Does an 'undo' command help?
+  Is it possible to quickly tell the player they made a 'dead end' move?
+
+
+All files are in: https://github.com/pygame2018/spring18/class12_files
+
+
