@@ -12,6 +12,8 @@ First, the Inkspill!
 - image file 4: inkspillsettingsbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettingsbutton.png
 - image file 5: inkspillresetbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillresetbutton.png
 
+Download all at http://invpy.com/inkspillimages.zip
+
 How to play: choose a different color for the top-left corner so that the
 same color region grows... until the whole board is one color.
 
@@ -63,6 +65,8 @@ all. You can beat it if you think a few steps ahead.
 - Source code - flippy.py: http://invpy.com/flippy.py
 - image file 1: flippybackground.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippybackground.png
 - image file 2: flippyboard.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippyboard.png
+
+Download all at http://invpy.com/flippyimages.zip
 
 Look for the game AI part (getComputerMove). Can you improve it a bit
 by adding a few special rules. One rule that the computer has already,

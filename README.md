@@ -5,12 +5,12 @@ simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
 Class 13: Two new games! 
-- Files in class13\_files
-(https://github.com/pygame2018/spring18/tree/master/class13_files) -
+- Files in class13\_files (https://github.com/pygame2018/spring18/tree/master/class13_files)
 - Notes: see
 class13.txt.(https://github.com/pygame2018/spring18/blob/master/class13.txt)
 
-For the "inkspill" game, download:
+For the "inkspill" game, download everything in a zip archive: http://invpy.com/inkspillimages.zip
+Or, individually at:
 - Source code - inkspill.py: http://invpy.com/inkspill.py
 - image file 1: inkspilllogo.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspilllogo.png
 - image file 2: inkspillsettings.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettings.png
@@ -18,10 +18,13 @@ For the "inkspill" game, download:
 - image file 4: inkspillsettingsbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettingsbutton.png
 - image file 5: inkspillresetbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillresetbutton.png
 
-For the "flippy" game, download:
+
+For the "flippy" game, download everything in a zip archive: http://invpy.com/flippyimages.zip
+Or, individually at:
 - Source code - flippy.py: http://invpy.com/flippy.py
 - image file 1: flippybackground.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippybackground.png
 - image file 2: flippyboard.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippyboard.png
+
 
 Class 12: Star Pusher!
 - Files in class12\_files
