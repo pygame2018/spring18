@@ -5,7 +5,7 @@ interesting points...
 
 First, the Inkspill!
 --------------------
-- Source code - inkspill.py: http://invpy.com/buggy/inkspill
+- Source code - inkspill.py: http://invpy.com/inkspill.py
 - image file 1: inkspilllogo.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspilllogo.png
 - image file 2: inkspillsettings.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettings.png
 - image file 3: inkspillspot.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillspot.png
@@ -60,7 +60,7 @@ to find a move that flips the most stones (i.e. the best move assuming
 the game ends at the current step.) So it does not think ahead much at
 all. You can beat it if you think a few steps ahead.
 
-- Source code - flippy.py: http://invpy.com/buggy/flippy
+- Source code - flippy.py: http://invpy.com/flippy.py
 - image file 1: flippybackground.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippybackground.png
 - image file 2: flippyboard.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippyboard.png
 
