@@ -1,0 +1,75 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. Two new games! This is just for fun, and some reflections, plus some
+interesting points...
+
+First, the Inkspill!
+--------------------
+- Source code - inkspill.py: http://invpy.com/buggy/inkspill
+- image file 1: inkspilllogo.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspilllogo.png
+- image file 2: inkspillsettings.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettings.png
+- image file 3: inkspillspot.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillspot.png
+- image file 4: inkspillsettingsbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettingsbutton.png
+- image file 5: inkspillresetbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillresetbutton.png
+
+How to play: choose a different color for the top-left corner so that the
+same color region grows... until the whole board is one color.
+
+This is basically just to understand an interesting algorithm (i.e. computing technique) called the "flood fill". We actually have seen this already in the
+StarPusher game. Remember in the textual level design, you drew the boundary
+(wall) but how do you tell if you are inside the wall or outside of the wall?
+The idea is that, if you are inside a wall, then the cells neighbouring it are
+also in the wall... so you can expand the "inside" area until you hit the wall.
+So the basic idea is:
+
+1. Make two empty lists, one "inside" list", one "work" list.
+
+2. Put the first inside spot (i.e. the starting position) to "work" list.
+
+3. Select one item off the "work" list and put it into "inside" list.
+
+4. Find all neighbours (left/right/up/down) of the selected item, and
+start a loop checking if any of them are not an wall, and also not in
+the "inside" list. If so, put (i.e. append) it to the "work" list.  
+
+5. If the "work" list is empty, you are done. Otherwise, go back to step 3.
+
+When this is done, the "inside" list contains all inside spots.
+So this list can also be called the "results" list.
+
+This is really the foundation of a lot of AI search technique. And you will
+find a lot of applications in games as well! For this game, you just change
+a little bit of steps 3 and 4 - pick one color that appears most
+frequently in the work list's differently colored neighbours, then add
+all differently colored neighbours to work list (and move the selected colored
+cells into the "result" list).
+
+The game is fairly easy to play, and it has difference settings.
+One particular interesting thing that we have not covered so far is
+about the difficulty levels (easy/medium/hard). This game shows you
+how to get this done. (And, if you are curious, find out how these
+levels are actually made.)
+
+Second game: Flippy!
+--------------------
+
+This is really "Othello" or "Reversi", with the computer playing
+against you.  Of course, it all depends on how "smart" the computer
+player is.  Fortunately, this one is not very smart. It simply tries
+to find a move that flips the most stones (i.e. the best move assuming
+the game ends at the current step.) So it does not think ahead much at
+all. You can beat it if you think a few steps ahead.
+
+- Source code - flippy.py: http://invpy.com/buggy/flippy
+- image file 1: flippybackground.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippybackground.png
+- image file 2: flippyboard.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippyboard.png
+
+Look for the game AI part (getComputerMove). Can you improve it a bit
+by adding a few special rules. One rule that the computer has already,
+is to take a corner position if at all possible. Can you think of some
+other ones?  It is not as hard as you think!
+
+
+All files are in: https://github.com/pygame2018/spring18/class13_files
+
+

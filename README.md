@@ -4,6 +4,24 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+class 13: Two new games! 
+- Files in class13\_files
+(https://github.com/pygame2018/spring18/tree/master/class13_files) -
+- Notes: see
+class13.txt.(https://github.com/pygame2018/spring18/blob/master/class13.txt)
+- Download: 
+For the "inkspill" game:
+- Source code - inkspill.py: http://invpy.com/buggy/inkspill
+- image file 1: inkspilllogo.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspilllogo.png
+- image file 2: inkspillsettings.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettings.png
+- image file 3: inkspillspot.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillspot.png
+- image file 4: inkspillsettingsbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillsettingsbutton.png
+- image file 5: inkspillresetbutton.png: https://github.com/pygame2018/spring18/raw/master/class13_files/inkspillresetbutton.png
+For the "flippy" game:
+- Source code - flippy.py: http://invpy.com/buggy/flippy
+- image file 1: flippybackground.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippybackground.png
+- image file 2: flippyboard.png: https://github.com/pygame2018/spring18/raw/master/class13_files/flippyboard.png
+
 Class 12: Star Pusher!
 - Files in class12\_files
 (https://github.com/pygame2018/spring18/tree/master/class12_files) -
