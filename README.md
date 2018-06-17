@@ -4,6 +4,20 @@ In the fall semester we learned python programming and how to make
 simple terminal-based games/puzzles. Now we are going to learn
 the GUI games, using the pygame module.
 
+Class 14: Two new games! 
+- Files in class14\_files (https://github.com/pygame2018/spring18/tree/master/class14_files)
+- Notes: see
+class14.txt.(https://github.com/pygame2018/spring18/blob/master/class14.txt)
+
+For the "Four-in-a-row" game
+- download everything in a zip archive: http://invpy.com/fourinarowimages.zip
+- Source code - http://invpy.com/fourinarow.py
+
+For the "Gem-gem" game
+- download everything in a zip archive: http://invpy.com/gemgemimages.zip
+- Source code - http://invpy.com/gemgem.py
+
+
 Class 13: Two new games! 
 - Files in class13\_files (https://github.com/pygame2018/spring18/tree/master/class13_files)
 - Notes: see

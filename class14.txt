@@ -1,0 +1,52 @@
+Outline  (https://github.com/pygame2018/spring18/)
+-------
+1. Another two games! Puzzle games with some focus on how to implement game AI.
+
+
+First, the "Four-In-A-Row": Connect-Four clone
+----------------------------------------------
+Download all at http://invpy.com/inkspillimages.zip
+Download the source code at /invpy.com/fourinarowimages.zip
+
+How to play: drop (drag and drop) a stone above the board so it falls
+into one of the seven column. The player get four in a row
+(horizontal, vertical, or diagnoal) wins.
+
+The game is simple, but think about how to play as the computer.
+Each turn there are 7 choices at most, so each round is 7x7 = 49
+choices. Next round, there will be 49 possible moves again.
+There is a DIFFICULTY constant in the game, and it is set to 2. That
+means in each step the computer considers 2 rounds, i.e. 49x49=2401
+possible combinations. You can consider changing the DIFFICULTY level
+to 0 (very dumb) or 3 (hard to beat).
+
+So the AI is simple: the computer simulate all moves in the next few rounds and
+pick the best move (i.e. the move leads to most wins). You just need 
+a big table to enumerate all the possible moves.
+
+Second game: Gemgem (a Bejeweled clone)
+---------------------------------------
+Download all at http://invpy.com/gemgemimages.zip
+Download the source code at http://invpy.com/gemgem.py
+
+How to play: swap a pair of adjacent gems to match three-in-row (horizontal
+or vertical, not diagonal). The gems then disappear and more gems drop in
+from the top. You score some points for the matches.
+
+For this variation, you have to pick quickly because the score drops over time.
+The game ends when there are no possible matches.
+
+The only difficult part in the game is to computer if there are possible moves
+left (look at the canMakeMove() function). You basically need to figure out if
+a move involve a gem can lead to a triplet or not. There are 2 different ways
+in each direction of swapping, so 4x2 = 8 ways for all four directions. 
+
+One more thing to note is that when new gems are dropped down, there could be
+triplet forming directly. So you will need to check for matching gems
+and remove them - this leads to more gems dropping down and then more
+checks for matching triplets, and so on...
+
+
+All files are in: https://github.com/pygame2018/spring18/class14_files
+
+
